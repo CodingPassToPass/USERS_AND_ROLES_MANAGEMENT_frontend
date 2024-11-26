@@ -36,6 +36,9 @@ const RoleManagement = () => {
         formData.append("permissions",permissions);
 
         dispatch( createRole(formData));
+
+        setName("");
+        setPermissions(["READ"]);
     } 
 
     const handlePermissionSelect = (e)=>{

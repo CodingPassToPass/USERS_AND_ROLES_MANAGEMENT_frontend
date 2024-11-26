@@ -60,6 +60,11 @@ const UserManagement = () => {
         formData.append("roles",roleIds);
 
         dispatch( createUser(formData));
+
+        setUsername("");
+        setEmail("");
+        setAge("");
+        setStatus("");
     } 
 
     //fetch all users
