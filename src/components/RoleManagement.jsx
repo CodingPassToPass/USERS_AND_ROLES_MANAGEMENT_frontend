@@ -137,9 +137,9 @@ const RoleManagement = () => {
             <div style={{margin:"12px auto" , display:"flex", flexDirection:"column", alignItems:"start",borderRadius:"10px",boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px"}}>  
                 <div style={{ display:"flex", alignItems:"center",padding:"12px",flexWrap:"wrap"}}>
                     
-                    <TextField value={name} onChange={(e)=>{ setName(e.target.value)}} label="name" type="text" style={{margin:'8px 20px',width:"350px"}} />
+                    <TextField value={name} onChange={(e)=>{ setName(e.target.value)}} label="name" type="text" sx={{margin:'8px 20px',width:{xs:"290px",md:"380px"} }} />
                     
-                    <Box sx={{width:"200px" ,display:"flex",height:"55px",alignItems:"center",width:"400px"}}>
+                    <Box sx={{width:"200px" ,display:"flex",height:"55px",alignItems:"center",width:"400px",marginLeft:{xs:"24px",md:"0px"}}}>
                         <InputLabel id="select-permission" sx={{marginRight:"12px"}}>Permissions</InputLabel>
                         <Select
                           value={permissions}

@@ -207,7 +207,7 @@ const UserManagement = () => {
                     
                     <TextField value={age} onChange={(e)=>{ setAge(e.target.value)}} label="Age" type="number" style={{margin:'8px 20px'}} />
                     
-                    <Box sx={{width:"200px" ,display:"flex",height:"55px",alignItems:"center"}}>
+                    <Box sx={{width:"200px" ,display:"flex",height:"55px",alignItems:"center",marginLeft:{xs:"24px",md:"0px"}}}>
                         <InputLabel id="select-role" sx={{marginRight:"12px"}}>Roles</InputLabel>
                         <Select
                           value={roles}
@@ -225,7 +225,7 @@ const UserManagement = () => {
                         </Select>
                     </Box>
 
-                    <Box sx={{width:"200px" ,display:"flex",height:"55px",alignItems:"center"}}>
+                    <Box sx={{width:"200px" ,display:"flex",height:"55px",alignItems:"center",marginLeft:{xs:"18px",md:"0px"},marginTop:{xs:"10px",md:"0px"}}}>
                         <InputLabel id="select-status" sx={{marginRight:"12px"}}>Status</InputLabel>
                         <Select
                           value={status}
