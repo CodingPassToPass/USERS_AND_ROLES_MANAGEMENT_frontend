@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, TextField, Box, IconButton, Typography, Select, InputLabel, MenuItem, Dialog } from '@mui/material';
+import { Button, TextField, Box, IconButton, Typography, Select, InputLabel, MenuItem, Dialog, CircularProgress } from '@mui/material';
 import { DataGrid} from "@mui/x-data-grid";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
@@ -154,9 +154,28 @@ const UserManagement = () => {
         setRoles(e.target.value);
     }
 
+    //loading interval
+    // const [ progress, setProgress] = useState(10);
+
+    // useEffect(()=>{
+    //     const timer = setInterval(()=>{
+    //         setProgress((prevProgress)=>( prevProgress>=100 ? 0 : prevProgress+5))
+    //     },500);
+
+    //     return ()=>{
+    //         clearInterval(timer);
+    //     }
+    // },[]);
 
     return (
         <AppLayout>
+            {
+                isLoading
+                ?
+                <Box sx={{width:"100vw",height:"100vh",backgroundColor:"#c5c4c4",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                    <CircularProgress color={"black"}/>
+                </Box>
+                :(<>
             {/* loading Dialog*/}
             <Dialog open={isLoading}></Dialog>
 
@@ -249,6 +268,8 @@ const UserManagement = () => {
                 />
                 </Box>
             </Box>
+            </>)
+        }
         </AppLayout>
     );
 };

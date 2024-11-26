@@ -109,6 +109,13 @@ const RoleManagement = () => {
 
     return (
         <AppLayout>
+            {
+                isLoading
+                ?
+                <Box sx={{width:"100vw",height:"100vh",backgroundColor:"#c5c4c4",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                    <CircularProgress color={"black"}/>
+                </Box>
+                :(<>
             {/* loading Dialog*/}
             <Dialog open={isLoading} ></Dialog>
 
@@ -182,6 +189,8 @@ const RoleManagement = () => {
                 />
                 </Box>
             </Box>
+            </>)
+        }
         </AppLayout>
     );
 };
