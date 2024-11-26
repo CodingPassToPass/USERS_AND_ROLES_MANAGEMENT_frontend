@@ -9,8 +9,8 @@ export default function Home(){
 
     return (
         <AppLayout>
-        <Typography sx={{fontSize:"30px"}}>Welcome to the Home page</Typography>
-        <Button sx={{backgroundColor:"black",color:"white",padding:"12px 32px ",margin:"30px","&:hover":{backgroundColor:"gray"}}} onClick={()=>{dispatch(setIsMobileOpen(true))}}><Typography sx={{fontSize:"30px"}}>Click Me to Manage Roles and Users</Typography></Button>
+        <Typography sx={{fontSize:"30px",marginTop:{xs:"70px",md:"20px"}}}>Welcome to the Home page</Typography>
+        <Button sx={{ marginTop:{xs:"40px",md:"0px"},backgroundColor:"black",color:"white",padding:"12px 32px ",margin:"30px","&:hover":{backgroundColor:"gray"}}} onClick={()=>{dispatch(setIsMobileOpen(true))}}><Typography sx={{fontSize:{xs:"20px",md:"30px"},marginTop:{xs:"20px",md:"5px"}}}>Click Me to Manage Roles and Users</Typography></Button>
         </AppLayout>
     )
 }
