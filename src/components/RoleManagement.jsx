@@ -23,6 +23,7 @@ const RoleManagement = () => {
     const [ name, setName] = useState();
     const [ permissions, setPermissions] = useState(["READ"]);
     const [ currentDataForUpdate, setCurrentDataForUpdate] = useState();
+    const [ loading, setLoading] = useState(false);
 
 
     //new user create
@@ -48,12 +49,15 @@ const RoleManagement = () => {
     //fetch all roles
     useEffect(()=>{
         async function fetchRoles(){
+            setLoading(true)
           try{
               const { data}= await axios.get(`${server}/api/roles`,{ headers:{ "Content-Type":"application/json"} });
               dispatch(AllRolesSet({roles: data.roles}));
+              setLoading(false)
           }
           catch(err){
               console.log(err);
+              setLoading(false)
           }
       }
       fetchRoles();
@@ -110,7 +114,7 @@ const RoleManagement = () => {
     return (
         <AppLayout>
             {
-                isLoading
+                ( isLoading || loading )
                 ?
                 <Box sx={{width:"100vw",height:"100vh",backgroundColor:"#c5c4c4",display:"flex",alignItems:"center",justifyContent:"center"}}>
                     <CircularProgress color={"black"}/>
