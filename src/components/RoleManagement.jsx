@@ -26,7 +26,7 @@ const RoleManagement = () => {
     const [ loading, setLoading] = useState(false);
 
 
-    //new user create
+    //new user create-
     const handleCreateNewUser = ()=>{
 
         if(name.trim()===""){ return toast.error("Please Enter Name");} 
